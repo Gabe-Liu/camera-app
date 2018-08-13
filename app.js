@@ -13,6 +13,7 @@ const cameraView = document.querySelector("#camera--view"),
     cameraTrigger = document.querySelector("#camera--trigger")
 // Access the device camera and stream to cameraView
 function cameraStart() {
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
     navigator.mediaDevices
         .getUserMedia(constraints)
         .then(function(stream) {
