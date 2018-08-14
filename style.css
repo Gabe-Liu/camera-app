@@ -89,6 +89,7 @@ html, body{
 }
 .num-box {
     position: absolute;
+    z-index: 10;
     left: 10px;
     top: 10px;
     font-size: 15px;
