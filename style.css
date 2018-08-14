@@ -1,40 +1,277 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 html, body{
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
+    font-family: 微軟正黑體
+}
+#camera, #camera--view, #camera--sensor, #camera--output{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#camera--view, #camera--sensor, #camera--output{
+    /* transform: scaleX(-1); */
+    filter: FlipH;
+}
+#camera--trigger{
+    width: 200px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: 30px;
+    left: calc(50% - 100px);
+}
+.taken{
+    height: 100px!important;
+    width: 100px!important;
+    transition: all 0.5s ease-in;
+    border: solid 3px white;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+.num-box {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 15px;
+    color: #fff;
+    background: rgba(0,0,0,.5);
+    padding: 5px 15px;
+    border-radius: 5px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4), 0 0 2px rgba(0,0,0,0.6);
+}
+
+
+.matrix-box {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background: rgb(255, 255, 255);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s ease;
+}
+.matrix-box.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+.center-box {
+    /* background-color: rgba(0,0,0,.5); */
+    width: 80vw;
+    height: 80vw;
+    position: relative;
+}
+.wheel-back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.wheel-back svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.btn-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 14;
+}
+.start-btn {
+    position: absolute;
+    z-index: 15;
+    cursor: pointer;
+}
+.start-btn-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: pre-line;
+    color: rgb(255, 255, 255);
+    background-color: rgb(105, 192, 173);
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 微軟正黑體, 微軟正黑體;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0px;
+    box-shadow: none;
+    border-radius: 16px;
+}
+.cpt-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 16px;
+}
+
+.style-0 {
+    padding-top: 15%;
+    top: 42%;
+    bottom: 33%;
+    left: 37%;
+    right: 37%;
+}
+.svg-box {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+}
+.svg-box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.wheel-front {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+.wheel-front img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+}
+.matrix-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    padding: 15% 10% 10%;
+}
+.matrix-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3%;
+}
+.matrix-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.matrix-item-box {
+    position: relative;
+    line-height: 1.25;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    user-select: none;
+    font-family: '微軟正黑體';
+    padding: 3px;
+    width: 20vw;
+    height: 20vw;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    font-size: 12px;
   }
-  #camera, #camera--view, #camera--sensor, #camera--output{
-      position: fixed;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
+  .matrix-item-box.active {
+      background-color: rgb(255, 232, 13);
   }
-  #camera--view, #camera--sensor, #camera--output{
-      /* transform: scaleX(-1); */
-      filter: FlipH;
+  .matrix-0 {
+    border-radius: 10%;
   }
-  #camera--trigger{
-      width: 200px;
-      background-color: black;
-      color: white;
-      font-size: 16px;
-      border-radius: 30px;
-      border: none;
-      padding: 15px 20px;
-      text-align: center;
-      box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-      position: fixed;
-      bottom: 30px;
-      left: calc(50% - 100px);
+  .matrix-0 .prize-img {
+    max-height: 65%;
   }
-  .taken{
-      height: 100px!important;
-      width: 100px!important;
-      transition: all 0.5s ease-in;
-      border: solid 3px white;
-      box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-      top: 20px;
-      right: 20px;
-      z-index: 2;
+  .prize-img {
+    position: relative;
+    z-index: 2;
+    width: 85%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
+  .prize-name {
+    position: relative;
+    z-index: 2;
+    margin-top: 3%;
+  }
+  
