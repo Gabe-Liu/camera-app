@@ -7,94 +7,137 @@
         <!-- Name of your awesome camera app -->
         <title>Camera App</title>
         <!-- Link to your main style sheet-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="matrix-box">
-            <div class="center-box">
-                <div class="btn-wrap">
-                    <div class="svg-box" >
-                        <img src="matrix-bingo-0-2.png" alt="">
+        <div class="award">
+            <div class="close"><i class="far fa-times-circle"></i></div>
+            <div class="award-title">
+                恭喜中獎
+            </div>
+            <div class="award-img">
+                <img id="win-img" src="" alt="">
+            </div>
+            <div class="btn">填寫表單</div>
+        </div>
+        <div class="matrix-box show">
+            <div class="container-box">
+                <div class="top-content">
+                    <img class="cloud" src="cloud.png" alt="">
+                    <img class="title-img" src="title.png" alt="">
+                    <img class="loggage" src="loggage.png" alt="" >
+                    <img class="balloon" src="balloon.png" alt="">
+                </div>                
+                <div class="content-box">
+                    <div class="des">
+                            網路投保旅行平安險24小時為您服務 ! 一小時快速投保，旅遊期間全方位意外保障，意外傷害、天災攪局免心驚。
                     </div>
-                    <div class="start-btn style-0">
-                        <div class="start-btn-inner">開始<div class="cpt-border"></div></div>
+                    <div class="info">
+                        <div class="info-title">活動說明</div>
+                        <div class="info-des">立即參加活動，立刻獲得精美禮物。</div>
+                        <img class="unbrella" src="unbrella.png" alt="">
+                    </div>
+                    <div class="center-box">
+                        <div class="btn-wrap">
+                            <div class="svg-box" >
+                                <img src="matrix-bingo-0-2.png" alt="">
+                            </div>
+                            <div class="start-btn style-0">
+                                <div class="start-btn-inner">開始<div class="cpt-border"></div></div>
+                            </div>
+                        </div>
+        
+                        <div class="matrix-wrap">
+                            <div class="matrix-row">
+                                <div class="matrix-item-box matrix-0" data-index="1">
+                                    <div class="prize-img">
+                                    </div>
+                                    <div class="prize-name">獎項1</div>
+                                </div>
+                                <div class="matrix-item-box matrix-0" data-index="2">
+                                    <div class="prize-img">
+                                    </div>
+                                    <div class="prize-name">獎項2</div>
+                                </div>
+                                <div class="matrix-item-box matrix-0" data-index="3">
+                                    <div class="prize-img">
+                                    </div>
+                                    <div class="prize-name">獎項3</div>
+                                </div>
+                            </div>
+                            <div class="matrix-row">
+                                <div class="matrix-item-box matrix-0" data-index="8">
+                                    <div class="prize-img">
+                                    </div>
+                                    <div class="prize-name">獎項8</div>
+                                </div>
+                                <div class="matrix-item-box matrix-0" data-index="4">
+                                    <div class="prize-img">
+                                    </div>
+                                    <div class="prize-name">獎項4</div>
+                                </div>
+                            </div>
+                            <div class="matrix-row reverse">
+                                <div class="matrix-item-box matrix-0" data-index="5">
+                                    <div class="prize-img">
+                                    </div>
+                                    <div class="prize-name">獎項5</div>
+                                </div>
+                                <div class="matrix-item-box matrix-0" data-index="6">
+                                    <div class="prize-img">
+                                    </div>
+                                    <div class="prize-name">獎項6</div>
+                                </div>
+                                <div class="matrix-item-box matrix-0" data-index="7">
+                                    <div class="prize-img">
+                                    </div>
+                                    <div class="prize-name">獎項7</div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="wheel-front">
+                            <img src="matrix-bingo-0-1.png" alt="">
+                        </div>
+                        <div class="wheel-back">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500"
+                            style="enable-background:new 0 0 500 500;" xml:space="preserve">            
+                                <path d="M469.7,500H30.6c-5.5,0-10-4.5-10-10V34.4c0-5.5,4.5-10,10-10h439.1c5.5,0,10,4.5,10,10V490
+                                    C479.7,495.5,475.3,500,469.7,500z" style="fill: rgb(206, 52, 44)"/>
+                                <g style="fill: rgb(226, 76, 58)">
+                                    <polygon points="278.5,24.4 221.8,24.4 223.5,41.2 250.2,308.2 276.8,41.2"/>
+                                    <polygon points="456.6,24.4 380.8,24.4 362.6,63.9 250.2,308.2 408.8,90.1"/>
+                                    <polygon points="119.6,24.4 43.7,24.4 91.6,90.1 250.2,308.2 137.8,63.9"/>
+                                    <polygon points="479.7,146.2 471.6,152 250.2,308.2 479.7,205.7"/>
+                                    <polygon points="479.7,286 250.2,308.2 479.7,330.5"/>
+                                    <polygon points="479.7,470.2 479.7,410.7 250.2,308.2 471.6,464.5"/>
+                                    <polygon points="389.7,500 250.2,308.2 338.4,500"/>
+                                    <polygon points="269.3,500 250.2,308.2 231,500"/>
+                                    <polygon points="161.9,500 250.2,308.2 110.7,500"/>
+                                    <polygon points="20.6,470.2 28.8,464.5 250.2,308.2 20.6,410.7"/>
+                                    <polygon points="20.6,330.5 250.2,308.2 20.6,286"/>
+                                    <polygon points="20.6,146.2 20.6,205.7 250.2,308.2 28.8,152"/>
+                                </g>
+                            </svg>
+                        </div>
+        
+                    </div>
+                    <div class="footer">
+                        <div class="contact">
+                            <a href=""><i class="fas fa-envelope-open"></i></a>
+                            <a href=""><i class="fas fa-map-marker-alt"></i></a>
+                            <div class="phone">
+                                <i class="fas fa-phone"></i>
+                                <div class="text">  與我們聯絡</div>
+                            </div>
+                        </div>
+                        <div class="copyright">
+                                ©2018 FUCO & Ryzo Co.,Ltd.  保留一切權利。
+                        </div>
+                        
                     </div>
                 </div>
-
-                <div class="matrix-wrap">
-                    <div class="matrix-row">
-                        <div class="matrix-item-box matrix-0" data-index="1">
-                            <div class="prize-img">
-                            </div>
-                            <div class="prize-name">獎項1</div>
-                        </div>
-                        <div class="matrix-item-box matrix-0" data-index="2">
-                            <div class="prize-img">
-                            </div>
-                            <div class="prize-name">獎項2</div>
-                        </div>
-                        <div class="matrix-item-box matrix-0" data-index="3">
-                            <div class="prize-img">
-                            </div>
-                            <div class="prize-name">獎項3</div>
-                        </div>
-                    </div>
-                    <div class="matrix-row">
-                        <div class="matrix-item-box matrix-0" data-index="8">
-                            <div class="prize-img">
-                            </div>
-                            <div class="prize-name">獎項8</div>
-                        </div>
-                        <div class="matrix-item-box matrix-0" data-index="4">
-                            <div class="prize-img">
-                            </div>
-                            <div class="prize-name">獎項4</div>
-                        </div>
-                    </div>
-                    <div class="matrix-row reverse">
-                        <div class="matrix-item-box matrix-0" data-index="5">
-                            <div class="prize-img">
-                            </div>
-                            <div class="prize-name">獎項5</div>
-                        </div>
-                        <div class="matrix-item-box matrix-0" data-index="6">
-                            <div class="prize-img">
-                            </div>
-                            <div class="prize-name">獎項6</div>
-                        </div>
-                        <div class="matrix-item-box matrix-0" data-index="7">
-                            <div class="prize-img">
-                            </div>
-                            <div class="prize-name">獎項7</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wheel-front">
-                    <img src="matrix-bingo-0-1.png" alt="">
-                </div>
-                <div class="wheel-back">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500"
-                    style="enable-background:new 0 0 500 500;" xml:space="preserve">            
-                        <path d="M469.7,500H30.6c-5.5,0-10-4.5-10-10V34.4c0-5.5,4.5-10,10-10h439.1c5.5,0,10,4.5,10,10V490
-                            C479.7,495.5,475.3,500,469.7,500z" style="fill: rgb(206, 52, 44)"/>
-                        <g style="fill: rgb(226, 76, 58)">
-                            <polygon points="278.5,24.4 221.8,24.4 223.5,41.2 250.2,308.2 276.8,41.2"/>
-                            <polygon points="456.6,24.4 380.8,24.4 362.6,63.9 250.2,308.2 408.8,90.1"/>
-                            <polygon points="119.6,24.4 43.7,24.4 91.6,90.1 250.2,308.2 137.8,63.9"/>
-                            <polygon points="479.7,146.2 471.6,152 250.2,308.2 479.7,205.7"/>
-                            <polygon points="479.7,286 250.2,308.2 479.7,330.5"/>
-                            <polygon points="479.7,470.2 479.7,410.7 250.2,308.2 471.6,464.5"/>
-                            <polygon points="389.7,500 250.2,308.2 338.4,500"/>
-                            <polygon points="269.3,500 250.2,308.2 231,500"/>
-                            <polygon points="161.9,500 250.2,308.2 110.7,500"/>
-                            <polygon points="20.6,470.2 28.8,464.5 250.2,308.2 20.6,410.7"/>
-                            <polygon points="20.6,330.5 250.2,308.2 20.6,286"/>
-                            <polygon points="20.6,146.2 20.6,205.7 250.2,308.2 28.8,152"/>
-                        </g>
-                    </svg>
-                </div>
-
             </div>
         </div>
         <!-- Camera -->

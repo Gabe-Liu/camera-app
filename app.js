@@ -55,14 +55,19 @@ $(function(){
     let nowcount; // 当前的变化位置
     let num = 8; // 一圈的數量
     let play = false;
+    let randomN = 0;
 
-    $('.start-btn').on('click', function(){
-        const randomN = Math.ceil(Math.random() * 7);
-        // this.lottery_award = this.prizes[randomN];
-        initMatrixBingo(randomN);
+    $('.close').on('click', function() {
+        $('.award').removeClass('show');
     });
 
-    function initMatrixBingo(randomN) {
+    $('.start-btn').on('click', function(){
+        randomN = Math.ceil(Math.random() * 7);
+        // this.lottery_award = this.prizes[randomN];
+        initMatrixBingo();
+    });
+
+    function initMatrixBingo() {
         play = true;
         speed = 40;
         count = num * 8 + randomN; // 总变化次数
@@ -74,8 +79,10 @@ $(function(){
 
     function run() { // 利用递归模拟setinterval的实现
         if (nowcount >= count) {
-        //   this.getAward();
-        console.log('得獎');        
+        // console.log('得獎');     
+        console.log(randomN)
+            $('.award').addClass('show');
+            $('#win-img').attr('src', imgArr[randomN - 1]);
         }else {
           nowcount += 1;
           speed += 1;
