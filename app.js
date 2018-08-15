@@ -38,9 +38,10 @@ cameraTrigger.onclick = function() {
     if (imgArr.length === 8) {
         $('.matrix-box').addClass('show');
         $("#camera").hide();
-        $('.prize-img').each(function(index) {
-            $(this).css({
-                'background-image': 'url(' + imgArr[index] + ')'
+        $('[data-index]').each(function(index) {
+            const $this = $(this);
+            $this.css({
+                'background-image': 'url(' + imgArr[ $this.attr('data-index') - 1] + ')'
             })
         })
     }
