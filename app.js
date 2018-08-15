@@ -79,7 +79,6 @@ $(function(){
 
     function run() { // 利用递归模拟setinterval的实现
         if (nowcount >= count) { 
-        alert(randomN)
             $('.award').addClass('show');
             $('#win-img').attr('src', imgArr[randomN - 1]);
         }else {
