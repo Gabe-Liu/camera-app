@@ -40,7 +40,7 @@ cameraTrigger.onclick = function() {
         $("#camera").hide();
         $('[data-index]').each(function(index) {
             const $this = $(this);
-            $this.css({
+            $this.find('.prize-img').css({
                 'background-image': 'url(' + imgArr[ $this.attr('data-index') - 1] + ')'
             });
         });
