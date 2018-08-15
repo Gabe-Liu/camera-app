@@ -42,8 +42,8 @@ cameraTrigger.onclick = function() {
             const $this = $(this);
             $this.css({
                 'background-image': 'url(' + imgArr[ $this.attr('data-index') - 1] + ')'
-            })
-        })
+            });
+        });
     }
 };
 // Start the video stream when the window loads
@@ -64,7 +64,6 @@ $(function(){
 
     $('.start-btn').on('click', function(){
         randomN = Math.ceil(Math.random() * 7);
-        // this.lottery_award = this.prizes[randomN];
         initMatrixBingo();
     });
 
@@ -79,9 +78,8 @@ $(function(){
     }
 
     function run() { // 利用递归模拟setinterval的实现
-        if (nowcount >= count) {
-        // console.log('得獎');     
-        console.log(randomN)
+        if (nowcount >= count) { 
+        alert(randomN)
             $('.award').addClass('show');
             $('#win-img').attr('src', imgArr[randomN - 1]);
         }else {
@@ -103,8 +101,7 @@ $(function(){
           }else {
             $('[data-index=' + nowcount % 8 + ']').addClass('active');
           }
-          
-          
+
           setTimeout(() => {
             run();
           }, speed);
